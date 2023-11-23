@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="titulo">Listado de alumnos</h1>   
+    <input type="text" placeholder="Apellido/s" id="apellido_s"> 
+    <input type="text" placeholder="Nombre/s" id="nombre_s"> 
+    <input type="text" placeholder="DNI" id="dni"> <br><br>
+    <button id="boton">Agregar</button>
+    <div><ol id="listado"></ol></div>
+   
+    <script>
+
+        let titulo = document.getElementById('titulo')
+        let apellido_s = document.getElementById('apellido_s')
+        let nombre_s = document.getElementById('nombre_s')
+        let dni = document.getElementById('dni')
+        let boton = document.getElementById('boton')
+        let contenedor = document.getElementById('listado')
+
+        boton.addEventListener('click', function(){
+            let apellidoS = apellido_s.value
+            let nombreS = nombre_s.value
+            let dniCompleto = dni.value
+            if(apellidoS.length == 0 || nombreS.length == 0 || dniCompleto.length == 0){
+                alert('Completar todos los campos')
+            }
+            else{
+            var enumerar = document.createElement('li')
+            var txt = document.createTextNode(apellidoS + ', ' + nombreS + ' - DNI: ' + dniCompleto)
+            enumerar.appendChild(txt)
+            contenedor.appendChild(enumerar)
+            apellido_s.value = ''
+            nombre_s.value = ''
+            dni.value = ''
+            } 
+        })
+
+    </script> 
+
+</body>
+</html>
