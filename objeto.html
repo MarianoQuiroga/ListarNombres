@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input id="cajaTexto" type="text">
+    <button id="boton">Buscar</button>
+    
+    <script>
+        let cursosAlumno 
+
+        let alumno001 = {
+            nombre: 'Marcos Javier',
+            apellido: 'Gonzalez',
+            dni: '34548472',
+            cursos:['HTML','CSS','JavaScript','React'] 
+        }
+
+        let alumno002 = {
+            nombre: 'Maria Juana',
+            apellido: 'Potranco',
+            dni: '18543233',
+            cursos:['Danza Folclorica','Yoga','Pilates'] 
+        }
+
+        let alumno003 = {
+            nombre: 'Federico Gaston',
+            apellido: 'Jimenez',
+            dni: '34857962',
+            cursos:['Herreria','Soldadura','Sistemas Electricos'] 
+        }
+
+        cursos001 = alumno001.cursos.join(', ')
+        cursos002 = alumno002.cursos.join(', ')
+        cursos003 = alumno003.cursos.join(', ')
+
+        let cajaTexto = document.getElementById('cajaTexto')
+        let boton = document.getElementById('boton')
+
+        boton.addEventListener('click', function(){
+            let alumno = cajaTexto.value.toLowerCase()
+            
+            switch (alumno) {
+                case 'alumno001':
+                document.write('Nombre/s: ' + alumno001.nombre + '<br>' + 'Apellido/s: ' + alumno001.apellido + '<br>' + 'Cursos: ' + cursos001+ '<br>'+ '<br>' )
+                break;
+
+                case 'alumno002':
+                document.write('Nombre/s: ' + alumno002.nombre + '<br>' + 'Apellido/s: ' + alumno002.apellido + '<br>' + 'Cursos: ' + cursos002+ '<br>'+ '<br>' )
+                break
+
+                case 'alumno003':
+                document.write('Nombre/s: ' + alumno003.nombre + '<br>' + 'Apellido/s: ' + alumno003.apellido + '<br>' + 'Cursos: ' + cursos003+ '<br>'+ '<br>' )
+                break
+
+                default:
+                document.write('Alumno no registrado')
+                    break;
+            }
+        })
+
+
+        
+        
+
+
+    </script>
+</body>
+</html>
